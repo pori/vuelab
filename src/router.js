@@ -1,6 +1,19 @@
+// Theirs
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+
+const requireComponent = require.context(
+  LAB_PATH,
+  true,
+  /[\w-]+\.experiment.vue$/
+);
+
+const experiments = requireComponent.keys().map(e => {
+  return {
+    path: "/" + e.replace("./", "").replace(".experiment.vue", ""),
+    component: requireComponent(e).default
+  };
+});
 
 Vue.use(Router);
 
@@ -11,16 +24,8 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: experiments[0].component
     },
-    {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
-    }
+    ...experiments
   ]
 });
