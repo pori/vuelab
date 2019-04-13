@@ -30,7 +30,7 @@ process.env.LAB_PATH = args.d
   ? path.join(cwd, args.d)
   : `${cwd}/src/components`;
 
-const config = path.join(`${cwd}`, "vuelab.config.js");
+const config = path.join(`${cwd}`, ".vuelab", "bootstrap.js");
 
 fs.access(config, fs.constants.F_OK | fs.constants.R_OK, err => {
   if (!err) {

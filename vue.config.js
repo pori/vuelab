@@ -9,5 +9,14 @@ module.exports = {
         LAB_CONFIG: JSON.stringify(process.env.LAB_CONFIG)
       }
     ]);
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        config: {
+          path: __dirname
+        }
+      }
+    }
   }
 };
