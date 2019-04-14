@@ -2,6 +2,8 @@
 
 Component Driven Development (CDD) for Vue.js!
 
+![Vuelab Screenshot](vuelab-screenshot.png)
+
 ## Installation
 
 It is recommended that Vuelab live in your project as a development dependency.
