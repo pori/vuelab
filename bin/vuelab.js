@@ -22,13 +22,16 @@ const args = require("minimist")(rawArgv, {
     "verbose"
   ]
 });
+
 const command = args._[0];
 
 const cwd = process.cwd();
 
-process.env.LAB_PATH = args.d
-  ? path.join(cwd, args.d)
-  : `${cwd}/src/components`;
+if (command == "build") {
+  args["dest"] = args["dest"] ? `${cwd}/${args["dest"]}` : `${cwd}/lab`;
+}
+console.log(args);
+process.env.LAB_PATH = `${cwd}/${args._[1]}` || `${cwd}/src/components`;
 
 const config = path.join(`${cwd}`, ".vuelab", "bootstrap.js");
 
@@ -37,7 +40,7 @@ fs.access(config, fs.constants.F_OK | fs.constants.R_OK, err => {
     process.env.LAB_CONFIG = config;
   }
 
-  service.run(command || "serve", args, rawArgv).catch(err => {
+  service.run(command, { ...args, _: [command] }).catch(err => {
     console.error(err);
     process.exit(1);
   });
