@@ -2,7 +2,7 @@
   <div class="sidebar">
     <router-link class="sidebar-title" to="/">
       <h2>
-        ⚗️ VueLab
+        ⚗️ Vuelab
         <small>v{{ version }}</small>
       </h2>
     </router-link>

@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       theme: "primary",
-      label: "Hello marco!"
+      label: "Button"
     };
   }
 };
