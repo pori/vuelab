@@ -1,6 +1,12 @@
 {
   "name": "vuelab",
   "version": "0.1.0",
+  "description": "Component Drive Development for Vue.js",
+  "tags": [
+    "vue",
+    "components",
+    "documentation"
+  ],
   "bin": {
     "vuelab": "./bin/vuelab.js"
   },
