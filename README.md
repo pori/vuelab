@@ -4,6 +4,10 @@ Component Driven Development (CDD) for Vue.js!
 
 ![Vuelab Screenshot](vuelab-screenshot.png)
 
+## Status
+
+This project is currently in the preview stage. Checkout the [road map](https://github.com/pori/vuelab/projects/1) to see what's coming.
+
 ## Installation
 
 It is recommended that Vuelab live in your project as a development dependency.
